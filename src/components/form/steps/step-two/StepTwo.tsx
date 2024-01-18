@@ -69,7 +69,7 @@ const StepTwo = () => {
             setMeasurementSystem('imperic');
           }}
         >
-          Imperic
+          Imperial
         </span>
         <span
           className={measurementSystem === 'metric' ? styles.active : undefined}
