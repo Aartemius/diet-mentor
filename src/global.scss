@@ -1,0 +1,38 @@
+// vars 
+$grey: #616161;
+$lightgrey: #e1e1e1;
+$black: #2D3436;
+$green: #5FCB39;
+$white: #fff;
+$transparent-green: rgba(95, 203, 57, .2);
+
+$tab: 1240px;
+$mob: 580px;
+
+// mixins 
+@mixin maxw($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin flex-horizontal-wrap($justify-content, $align-items) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+@mixin flex-horizontal-nowrap($justify-content, $align-items) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+@mixin flex-vertical($justify-content, $align-items) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

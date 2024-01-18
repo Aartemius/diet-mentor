@@ -1,0 +1,23 @@
+@import '../../../../global.scss';
+
+@keyframes scaleIn {
+  from {
+    transform: scale(.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successWrap {
+  @include flex-vertical(center, center);
+  min-height: 60vh;
+  h1 {
+    margin-bottom: 2rem;
+    animation: scaleIn 1s ease-in-out;
+    font-size: 3rem;
+    text-align: center;
+  }
+}

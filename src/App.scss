@@ -1,0 +1,36 @@
+@import './global.scss';
+
+* {
+  font-family: 'Inter', sans-serif;
+  color: #2D3436;
+}
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.step-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.step-subtitle {
+  font-size: 14px;
+  color: $grey;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.semibold-step-subtitle {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}

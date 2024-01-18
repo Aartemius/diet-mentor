@@ -1,0 +1,52 @@
+@import '../../../../global.scss';
+
+.systemSwitcher {
+  @include flex-horizontal-nowrap(center, stretch);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid $green;
+  width: 100%;
+  margin-bottom: 1rem;
+  span {
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 10px;
+    color: $green;
+    text-align: center;
+    cursor: pointer;
+    &.active {
+      background: $transparent-green;
+    }
+    &:first-of-type {
+      border-right: 1px solid $green;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  margin-bottom: 6rem;
+  .inputWrap {
+    margin-bottom: 10px;
+    position: relative;
+    input {
+      width: 100%;
+      padding: 20px 15px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px solid #e1e1e1;
+      box-sizing: border-box;
+    }
+    span {
+      position: absolute;
+      top: 3px;
+      left: 5px;
+      font-size: 13px;
+      color: $grey;
+    }
+  }
+}

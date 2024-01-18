@@ -1,0 +1,14 @@
+@import '../../global.scss';
+
+.topBarWrap {
+  @include flex-horizontal-wrap(center, center);
+  margin: 1rem 0 2rem;
+  cursor: pointer;
+  img:last-of-type {
+    margin-right: 1rem;
+  }
+  span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
