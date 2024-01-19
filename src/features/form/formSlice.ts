@@ -19,7 +19,7 @@ const initialFormData = {
 const formSlice = createSlice({
   name: 'form',
   initialState: {
-    currentStep: 1,
+    currentStep: window.sessionStorage.getItem('currentStep') ? Number(JSON.parse(window.sessionStorage.getItem('currentStep')!)) : 1,
     formData: window.sessionStorage.getItem('formData') ? JSON.parse(window.sessionStorage.getItem('formData')!) : initialFormData,
   },
   reducers: {

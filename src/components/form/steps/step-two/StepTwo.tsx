@@ -7,8 +7,10 @@ import styles from './StepTwo.module.scss';
 
 const StepTwo = () => {
   const dispatch = useDispatch();
-  const { formData } = useSelector((state: RootState) => state.form);
+  const { formData, currentStep } = useSelector((state: RootState) => state.form);
   const [measurementSystem, setMeasurementSystem] = useState<'metric' | 'imperic'>('imperic');
+
+  window.sessionStorage.setItem('currentStep', JSON.stringify(currentStep));
 
   const heightValueRef = useRef<HTMLInputElement | null>(null);
   const weightValueRef = useRef<HTMLInputElement | null>(null);

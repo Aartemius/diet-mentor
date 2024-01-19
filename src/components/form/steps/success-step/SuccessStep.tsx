@@ -1,7 +1,8 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PrimaryButton from "../../PrimaryButton";
 import { restoreInitialFormData, setPrevStep, setStep } from "../../../../features/form/formSlice";
 import styles from './SuccessStep.module.scss';
+import { RootState } from "../../../../app/store";
 
 const SuccessStep = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,8 @@ const SuccessStep = () => {
     dispatch(setStep(1));
   };
   const handleBackClick = () => dispatch(setPrevStep());
+  const { currentStep } = useSelector((state: RootState) => state.form);
+  window.sessionStorage.setItem('currentStep', JSON.stringify(currentStep));
   
   return (
   <section className={ styles.successWrap }>

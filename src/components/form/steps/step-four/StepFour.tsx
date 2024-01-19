@@ -8,7 +8,8 @@ import PrimaryButton from "../../PrimaryButton";
 
 const StepFour = () => {
   const dispatch = useDispatch();
-  const { formData } = useSelector((state: RootState) => state.form);
+  const { formData, currentStep } = useSelector((state: RootState) => state.form);
+  window.sessionStorage.setItem('currentStep', JSON.stringify(currentStep));
 
   const currentActiveOption = model.find(item => formData.physicalExerciseFrequency === item.value);
   const [stepValue, setStepValue] = useState(currentActiveOption?.value || null);

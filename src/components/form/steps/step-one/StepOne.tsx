@@ -6,7 +6,10 @@ import styles from './StepOne.module.scss';
 
 const StepOne = () => {
   const dispatch = useDispatch();
-  const { formData } = useSelector((state: RootState) => state.form);
+  const { formData, currentStep } = useSelector((state: RootState) => state.form);
+
+  window.sessionStorage.setItem('currentStep', JSON.stringify(currentStep));
+  
   const handleContinueClick = (value: string) => {
     dispatch(setFormData({
         ...formData,

@@ -8,7 +8,9 @@ import styles from './StepThree.module.scss';
 
 const StepThree = () => {
   const dispatch = useDispatch();
-  const { formData } = useSelector((state: RootState) => state.form);
+  const { formData, currentStep } = useSelector((state: RootState) => state.form);
+
+  window.sessionStorage.setItem('currentStep', JSON.stringify(currentStep));
 
   const currentActiveOption = model.find(item => formData.destructiveBehavior === item.value);
   const [stepValue, setStepValue] = useState(currentActiveOption?.value || null);
