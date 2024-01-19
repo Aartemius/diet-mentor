@@ -29,6 +29,12 @@ const StepFour = () => {
 
   return (
     <section>
+      <h1 className="step-title">Physical exercise</h1>
+      <h3 className="step-subtitle">
+        Physical exercise means a lot for a woman who<br />
+        wants to lose kilos and works at the office 
+      </h3>
+      <p className="semibold-step-subtitle">How active are you during the day?</p>
       <div className={ styles.finalStepWrap }>
         <div className={ styles.imageWrap }>
           <img src="images/pinkLady.png" alt="Physical exercise" />
