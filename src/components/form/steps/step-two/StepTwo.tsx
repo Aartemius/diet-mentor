@@ -15,23 +15,24 @@ const StepTwo = () => {
   const heightValueRef = useRef<HTMLInputElement | null>(null);
   const weightValueRef = useRef<HTMLInputElement | null>(null);
 
-  const [isHeightInputBadgeShown, setIsHeightInputBadgeShown] = useState(formData.personalParams.height.amount);
-  const [isWeightInputBadgeShown, setIsWeightInputBadgeShown] = useState(formData.personalParams.weight.amount);
+  const [isHeightInputEmpty, setIsHeightInputEmpty] = useState(formData.personalParams.height.amount);
+  const [isWeightInputEmpty, setIsWeightInputEmpty] = useState(formData.personalParams.weight.amount);
+  console.log(isHeightInputEmpty, isWeightInputEmpty)
 
 
   const handleHeightInputChange = () => {
     if (heightValueRef.current?.value) {
-      setIsHeightInputBadgeShown(true);
+      setIsHeightInputEmpty(true);
     } else {
-      setIsHeightInputBadgeShown(false);
+      setIsHeightInputEmpty(false);
     }
   }
 
   const handleWeightInputChange = () => {
     if (weightValueRef.current?.value) {
-      setIsWeightInputBadgeShown(true);
+      setIsWeightInputEmpty(true);
     } else {
-      setIsWeightInputBadgeShown(false);
+      setIsWeightInputEmpty(false);
     }
   }
 
@@ -94,7 +95,7 @@ const StepTwo = () => {
             required
             onChange={ handleHeightInputChange }
           />
-          { isHeightInputBadgeShown && <span>{measurementSystem === 'imperic' ? 'ft' : 'cm'}</span> }
+          { isHeightInputEmpty && <span>{measurementSystem === 'imperic' ? 'ft' : 'cm'}</span> }
         </div>
         <div className={ styles.inputWrap }>
           <input
@@ -106,10 +107,10 @@ const StepTwo = () => {
             required
             onChange={ handleWeightInputChange }
           />
-          { isWeightInputBadgeShown && <span>{measurementSystem === 'imperic' ? 'lb' : 'kg'}</span> }
+          { isWeightInputEmpty && <span>{measurementSystem === 'imperic' ? 'lb' : 'kg'}</span> }
         </div>
         <PrimaryButton
-          isDisabled={false}
+          isDisabled={ !isHeightInputEmpty || !isWeightInputEmpty }
           type="submit" 
           title="Continue" 
           isFullWidth
