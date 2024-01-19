@@ -24,7 +24,7 @@ const SuccessStep = () => {
       style={{ marginBottom: '1rem' }}
     />
     <PrimaryButton
-      title="Home"
+      title="Fill new form"
       onClick={ handleHomeClick }
       isDisabled={ false }
     />

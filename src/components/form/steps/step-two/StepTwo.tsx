@@ -17,8 +17,6 @@ const StepTwo = () => {
 
   const [isHeightInputEmpty, setIsHeightInputEmpty] = useState(formData.personalParams.height.amount);
   const [isWeightInputEmpty, setIsWeightInputEmpty] = useState(formData.personalParams.weight.amount);
-  console.log(isHeightInputEmpty, isWeightInputEmpty)
-
 
   const handleHeightInputChange = () => {
     if (heightValueRef.current?.value) {
